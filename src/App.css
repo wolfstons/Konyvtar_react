@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --ink: #20232a;
+  --muted: #716f78;
+  --paper: #fffdf9;
+  --cream: #f5efe5;
+  --line: #e8dfd3;
+  --berry: #bd4167;
+  --berry-dark: #8d2949;
+  --shadow: 0 24px 60px rgba(80, 52, 33, 0.12);
+}
+
+body {
+  background: #f5efe5;
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+}
+
+#root {
+  width: min(1120px, 100%);
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: clamp(32px, 7vw, 88px) clamp(16px, 5vw, 64px);
+  box-sizing: border-box;
+}
+
+header {
+  margin-bottom: 32px;
+  color: var(--ink);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+header::after {
+  display: block;
+  width: 72px;
+  height: 5px;
+  margin-top: 16px;
+  border-radius: 999px;
+  background: var(--berry);
+  content: '';
+}
+
+.tablazat {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  color: var(--muted);
+  background: var(--cream);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+th:first-child {
+  border-radius: 17px 0 0 0;
+}
+
+th:last-child {
+  border-radius: 0 17px 0 0;
+}
+
+tbody tr {
+  transition: background-color 160ms ease;
+}
+
+tbody tr:hover {
+  background: #fff6f7;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+td:first-child {
+  color: var(--berry);
+  font-weight: 700;
+}
+
+.delete-button {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid #e8b8c5;
+  border-radius: 50%;
+  color: var(--berry-dark);
+  background: #fff2f5;
+  cursor: pointer;
+  font: inherit;
+  place-items: center;
+  transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.delete-button span {
+  margin-top: -2px;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.delete-button:hover {
+  color: white;
+  background: var(--berry);
+  transform: rotate(90deg);
+}
+
+.delete-button:focus-visible {
+  outline: 3px solid rgba(189, 65, 103, 0.3);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  th,
+  td {
+    padding: 15px 16px;
+  }
+}
