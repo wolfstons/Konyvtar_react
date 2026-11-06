@@ -6,7 +6,7 @@ interface TablazatContextProps {
     torles: (id: number) => void;
 }
 
-export const TablazatContext = createContext<TablazatContextProps>({
+export const TablazatContext = createContext<TablazatContextProps | undefined>({
     konyvek: [],
     torles: () => undefined,
 });

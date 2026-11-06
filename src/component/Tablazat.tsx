@@ -3,10 +3,10 @@ import Sor from "./Sor";
 
 interface TablazatProps {
   konyvek: KonyvTipus[];
-  onDelete: (id: number) => void;
+  torol: (id: number) => void;
 }
 
-export default function Tablazat({ konyvek, onDelete }: TablazatProps) {
+export default function Tablazat({ konyvek, torol }: TablazatProps) {
   return (
     <>
       <header>könyvmoly</header>
@@ -24,7 +24,7 @@ export default function Tablazat({ konyvek, onDelete }: TablazatProps) {
           </thead>{" "}
           <tbody>
             {konyvek.map((konyv) => (
-              <Sor key={konyv.id} konyv={konyv} onDelete={onDelete} />
+              <Sor key={konyv.id} konyv={konyv} torol={torol} />
             ))}
           </tbody>
         </table>

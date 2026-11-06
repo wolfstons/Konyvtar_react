@@ -2,10 +2,10 @@ import type { KonyvTipus } from "../data/adat";
 
 interface SorProps {
   konyv: KonyvTipus;
-  onDelete: (id: number) => void;
+  torol: (id: number) => void;
 }
 
-export default function Sor({ konyv, onDelete }: SorProps) {
+export default function Sor({ konyv, torol }: SorProps) {
   return (
     <>
       <tr>
@@ -20,7 +20,7 @@ export default function Sor({ konyv, onDelete }: SorProps) {
             type="button"
             aria-label={`${konyv.cim} törlése`}
             title="Könyv törlése"
-            onClick={() => onDelete(konyv.id)}
+            onClick={() => torol(konyv.id)}
           >
             <span aria-hidden="true">×</span>
           </button>

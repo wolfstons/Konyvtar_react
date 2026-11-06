@@ -10,7 +10,7 @@ function App() {
     setKonyvek((aktualisKonyvek) => aktualisKonyvek.filter((konyv) => konyv.id !== id))
   }
 
-  return <Tablazat konyvek={konyvek} onDelete={torles} />
+  return <Tablazat konyvek={konyvek} torol={torles} />
 }
 
 export default App
