@@ -1,12 +1,16 @@
-import type { KonyvTipus } from "../data/adat";
+import { useContext } from "react";
 import Sor from "./Sor";
+import { TablazatContext } from "../context/TablazatContext";
 
-interface TablazatProps {
-  konyvek: KonyvTipus[];
-  torol: (id: number) => void;
-}
+export default function Tablazat() {
+  const context = useContext(TablazatContext);
 
-export default function Tablazat({ konyvek, torol }: TablazatProps) {
+  if (!context) {
+    throw new Error("A Tablazat komponenst TablazatContextProviderben kell használni.");
+  }
+
+  const { konyvek, torles: torol } = context;
+
   return (
     <>
       <header>könyvmoly</header>
